@@ -17,8 +17,9 @@ art_thumbnails_list_02.py  find thumbnail files
 art_thumbnails_upload_01.py upload thumbnail files
 					 params:[input: list-thumb.csv
                             output: thumbnails save to S3 subdir ]
-art_index_backup.pu   backup the index files of the subdir
+art_index_backup.py   backup the index files of the subdir
                      params:[output: index_001.html]
+art_index_insertads.py  insert adsense to index files
 
 boto3upload.py     upload to S3
 

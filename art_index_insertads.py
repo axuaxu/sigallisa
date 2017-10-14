@@ -32,8 +32,16 @@ rootDir = '.\\_build'
 fName = ".\\_build\\index.html"
 fo = open(fName,'r')
 fstr = fo.read()
-num = fstr.count('menu-img thumbnail')
+marker = 'menu-img thumbnail'
+num = fstr.count(marker)
 print (num)
+i = 0
+itemIndex = 0
+for i in range(0,num):
+  itemIndex = fstr.find(marker,itemIndex)
+  i  = i + 1
+  itemIndex = itemIndex + 20
+  print (i,itemIndex)
 #ft = flist(bakName) 
 #print (ft) 
 #with open('index-list.csv', 'w') as f:
