@@ -11,11 +11,22 @@ art_upload_index.py upload painter index files
                     params:[input: index-list.csv
                             output: index save to S3 subdir ]
 
-art_thumbnails_list.py  find thumbnail files
+art_thumbnails_list_01.py  find thumbnail files
                      params:[input: rootDir _build
                             output: list-thumb.csv ] 
+art_thumbnails_upload.py upload thumbnail files
+					 params:[input: list-thumb.csv
+                            output: thumbnails save to S3 subdir ]
 
 boto3upload.py     upload to S3
+
+
+[default]
+aws_access_key_id = AKIAJQMO45SQIB5FC34A
+aws_secret_access_key = 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
+[artlisa]
+aws_access_key_id = AKIAIZH7QLMQZ6DX6TCA
+aws_secret_access_key = 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
 
 
 aws_access_key_id = AKIAJQMO45SQIB5FC34A

@@ -11,16 +11,19 @@ print (bucket)
 #destDir = 'images/emile-claus/'
  
 i = 0
-count = 3
-sourceIndex = "index-list-01.csv"
+count = 99999
+sourceIndex = "list-thumb-01.csv"
 fl = open(sourceIndex,'r')
-for indexF in fl:
+for thumbF in fl:
     i = i +1
     if i < count:
-        indexF = indexF.replace('\n','')
-        nameArr = indexF.split('\\')
-        objName = 'images/'+nameArr[2]+'/'+nameArr[3]
-        data = open(indexF, 'rb')
+        thumbF = thumbF.replace('\n','')
+        nameArr = thumbF.split('\\')
+        #objName = 'images/'+nameArr[2]+'/'+nameArr[3]
+        objName = thumbF.replace('.\\_build','images')
+        objName = objName.replace('\\','/')
+        data = open(thumbF, 'rb')
         s3.Bucket('artlisa.org').put_object(Key=objName, Body=data)
+        #print (objName)
         print (objName)
     #break
