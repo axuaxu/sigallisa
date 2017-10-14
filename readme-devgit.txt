@@ -14,7 +14,7 @@ art_upload_index.py upload painter index files
 art_thumbnails_list_02.py  find thumbnail files
                      params:[input: rootDir _build
                             output: list-thumb.csv ] 
-art_thumbnails_upload.py upload thumbnail files
+art_thumbnails_upload_01.py upload thumbnail files
 					 params:[input: list-thumb.csv
                             output: thumbnails save to S3 subdir ]
 

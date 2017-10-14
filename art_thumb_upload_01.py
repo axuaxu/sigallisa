@@ -12,7 +12,7 @@ print (bucket)
  
 i = 0
 count = 99999
-sourceIndex = "list-thumb-01.csv"
+sourceIndex = "list-thumb.csv"
 fl = open(sourceIndex,'r')
 for thumbF in fl:
     i = i +1
