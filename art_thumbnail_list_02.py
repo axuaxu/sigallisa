@@ -24,11 +24,12 @@ def flist():
         #print('\t%s' % fname)
     for thumb in subdirList:
         if thumb =="thumbnails":
-            
-            for fname in fileList:
+            thumbDir = dirName+'\\'+thumb
+            thumbimg = os.listdir(thumbDir)
+            for fname in thumbimg:
                 #dirN = dirName.replace('.\\_build\\','images/')
                 t=t+dirName+'\\'+thumb+'\\'+fname+'\n'
-                #print (t)
+                #print (fname)
             #replaceX()
   return t
 
