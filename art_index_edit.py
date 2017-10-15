@@ -42,15 +42,21 @@ adsense = '<div class="menu-img thumbnail">' \
           +'</div>'
 
 rootDir = '.\\_build'
-fName = ".\\_build\\i_01.html"
+fName = ".\\_build\\index.html"
 fo = open(fName,'r')
 fstr = fo.read()
-marker = '<div class="menu-img thumbnail">'
+marker = '<img src="'
+org = '<img src="'
+rep = '<img src="images/'
+fstr = fstr.replace(org,rep)
+org = '<a href="'
+rep = '<a href="images/'
+fstr = fstr.replace(org,rep)
 num = fstr.count(marker)
 print (num)
 i = 0
 itemIndex = 0
-beginNum = 7
+beginNum = 0
 gap = 9
 for i in range(0,num):
   itemIndex = fstr.find(marker,itemIndex)
@@ -63,7 +69,7 @@ for i in range(0,num):
   itemIndex = itemIndex + 20
   print (i,itemIndex)
 
-nn = '.\\_build\\ia_01.html'
+nn = '.\\_build\\i_01.html'
 nf = open(nn,'w')
 nf.write(fstr)
 print (nn)

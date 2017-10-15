@@ -42,7 +42,7 @@ adsense = '<div class="menu-img thumbnail">' \
           +'</div>'
 
 rootDir = '.\\_build'
-fName = ".\\_build\\i_01.html"
+fName = ".\\_build\\index.html"
 fo = open(fName,'r')
 fstr = fo.read()
 marker = '<div class="menu-img thumbnail">'
@@ -53,9 +53,15 @@ itemIndex = 0
 beginNum = 7
 gap = 9
 for i in range(0,num):
+  insert = False
   itemIndex = fstr.find(marker,itemIndex)
   i  = i + 1
-  if i == beginNum:
+  if i==beginNum:
+      insert = True
+  if i > beginNum:
+      if (i-beginNum) % 9==0:
+          insert = True
+  if insert:
        fstrBefore = fstr[:itemIndex]
        fstrAfter = fstr[itemIndex:]
        fstr = fstrBefore+adsense+fstrAfter
@@ -63,8 +69,21 @@ for i in range(0,num):
   itemIndex = itemIndex + 20
   print (i,itemIndex)
 
-nn = '.\\_build\\ia_01.html'
+nn = '.\\_build\\i_00.html'
 nf = open(nn,'w')
 nf.write(fstr)
 print (nn)
- 
+
+i = 0
+count = 9999
+sourceIndex = "index-list-01.csv"
+fl = open(sourceIndex,'r')
+for indexF in fl:
+    i = i +1
+    if i < count:
+        indexF = indexF.replace('\n','')
+        nameArr = indexF.split('\\')
+        objName = 'images/'+nameArr[2]+'/'+nameArr[3]
+        data = open(indexF, 'rb')
+        s3.Bucket('artlisa.org').put_object(Key=objName, Body=data)
+        print (objName)

@@ -30,7 +30,8 @@ aws_secret_access_key = dqAH31SaHP1p6IDBt4J6zNo+MXifi9MMlX3JK3t3
 [artlisa]
 aws_access_key_id = AKIAIZH7QLMQZ6DX6TCA
 aws_secret_access_key = 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
-
+AKIAJBPRLHEDCSURUPOQ
+GpDW/oFbWOR6K3b4NxEhIlZJT8TJeB84HnWTROOh
 
 aws_access_key_id = AKIAJQMO45SQIB5FC34A
 aws_secret_access_key = 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
@@ -85,3 +86,15 @@ switchproxy连本机localhost的socks5代理
 
 总结起来，目前发现最好的办法是，用google的服务，xxnet，把ipv4换成ipv6，能傻
 瓜化的让不知道电脑的人也能绕过土共的网络长城。
+
+双卡机上
+
+FP+Truphone+gv 回拨
+
+总投入：0.99刀（FPsim card）+ 5刀 （FP downgrade fee）+30刀 （Truphone sim 
+card fee[内涵15刀 balance]）=35.99刀 只要这几家都不死，从此通讯开销就定格在
+这个数值了
+
+当然还需要买个双卡机，支持4+3的机器都能用
+
+Truphone接电话不要钱，于是利用回拨实现免费通话

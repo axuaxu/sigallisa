@@ -11,7 +11,7 @@ print (bucket)
 #destDir = 'images/emile-claus/'
  
 i = 0
-count = 3
+count = 999
 sourceIndex = "index-list-01.csv"
 fl = open(sourceIndex,'r')
 for indexF in fl:
@@ -21,6 +21,6 @@ for indexF in fl:
         nameArr = indexF.split('\\')
         objName = 'images/'+nameArr[2]+'/'+nameArr[3]
         data = open(indexF, 'rb')
-        s3.Bucket('artlisa.org').put_object(Key=objName, Body=data)
+        s3.Bucket('artlisa.org').put_object(Key=objName, Body=data, ContentType='text/html')
         print (objName)
     #break
